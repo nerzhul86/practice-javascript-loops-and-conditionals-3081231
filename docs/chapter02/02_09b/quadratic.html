@@ -27,6 +27,46 @@
  *        (-b + sqrt(b^2 - 4ac)) / 2a and
  *        (-b - sqrt(b^2 - 4ac) / 2a
  */
-        </script>
+
+ let a = parseInt(prompt('Enter value of a'));
+ let b = parseInt(prompt('Enter value of b'));
+ let c = parseInt(prompt('Enter value of c'));
+
+ // Discriminant calculation
+
+ let bRaised = Math.pow(b, 2);
+
+ let discriminant = (bRaised - (4 * a * c));
+
+ display("Discriminant is " + discriminant);
+
+ // (1)1 - 4 * 1 * 1 = -3
+ // (b=4)16 - 4 * 2(a) * 1(c) =  8
+ // (b=2)4 - 4 * 1(a) * 1(c) = 0
+
+ display("You entered a: " + a + " b: " + b + " c: " + c);
+
+ if(discriminant <0) //If the discriminant is negative
+ {
+    display("No real number solutions for provided a,b,c values");
+ }
+ else
+ if(discriminant === 0)  // if the discriminant is zero
+ {
+    let simpleSolution = ((-b)/(2*a));
+    display("Simple Solution: " + simpleSolution);
+ }
+ else
+ {
+    let squareRt = Math.sqrt(Math.pow(b,2) - (4*a*c));
+         
+    let solutionOne = (-b + squareRt) / (2*a);
+    let solutionTwo = (-b - squareRt) / (2*a); 
+
+    display("Complicated Solution One: " + solutionOne);
+    display("Complicated Solution Two: " + solutionTwo);
+ }
+
+ </script>
     </body>
 </html>
