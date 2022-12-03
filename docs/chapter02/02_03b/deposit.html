@@ -26,6 +26,23 @@
  *   - Report the updated balance to the customer.
  */
 
+    let currBalance = parseFloat(prompt('Please enter your current balance.'));
+
+    let amtDeposit = parseFloat(prompt('Please enter the amount you wish to deposit.'));
+
+    display("Current Balance: " + currBalance + ".");
+
+    display("Deposit Amount: " + amtDeposit + ".");
+
+    if(amtDeposit >= 10000.0)
+    {
+      display("As the Deposit Amount is greater than 10,000, Funds may be on hold for three days.");
+    }
+
+    let total = amtDeposit + currBalance;
+
+    display("Updated Balance: " + total + ".");
+
         </script>
     </body>
 </html>
