@@ -25,6 +25,31 @@
  *   - Calculate the discounted price.
  *   - Print the discounted price.
  */
-        </script>
+
+     let custPrice = prompt('Enter the Item Price');
+     let custAge = prompt('Enter your Age');
+    
+     let discount;
+
+     if(custAge >= 21 && custAge <= 65)
+     {
+        // 5% discount on Price
+        discount = parseFloat(5/100);
+     }
+     else
+     {
+        discount = parseFloat(10 / 100);
+     }
+
+     //calculate Discount
+
+     let dPrice = parseFloat(custPrice * discount);
+     let discountedPrice = parseFloat(custPrice - dPrice);
+
+     display("Because you are " + custAge + " years old,");
+     display("You get a discount of " + discount);
+     display("Your Discounted Price is " + discountedPrice);
+
+    </script>
     </body>
 </html>
