@@ -33,6 +33,68 @@
  *          display balance;
  *      }
  */
-        </script>
+
+   
+   let flag =1;
+   
+   do
+   {
+     let choice = prompt('Enter D for Deposit or W for Withdrawal.');
+
+     if(choice === 'W' || choice === 'w')
+      {
+        display("Withdrawal selected.");
+
+        let currBal = parseFloat(prompt('Enter current balance.'));
+        let amtWithdraw = parseFloat(prompt('Enter amount to withdraw.'));
+
+        if(amtWithdraw > 0 && amtWithdraw <= currBal)
+        {
+            let updatedBalance = currBal - amtWithdraw; 
+            display("Current Balance: " + currBal);
+            display("Amount Withdrawn: " + amtWithdraw);
+            display("Updated Balance: " + updatedBalance);
+        }
+        else
+        {
+            display("Invalid withdrawal amount entered. You cannot withdraw an amount greater than what you currently have.");
+        }
+        flag = 1;
+    }
+     else 
+     if(choice === 'D' || choice === 'd')
+      {
+        display("Deposit selected.");
+
+        let currBal = parseFloat(prompt('Enter current balance.'));
+        let amtDeposit = parseFloat(prompt('Enter amount to deposit.'));
+  
+        if(amtDeposit >0)
+        {
+            if(amtDeposit >= 10000)
+            {
+                display("Amount more than 10,000. Funds may be on hold");
+            }
+
+            let updatedBal = currBal + amtDeposit;
+            display("Current Balance: " + currBal);
+            display("Amount to Deposit: " + amtDeposit);
+            display("Updated Balance: " + updatedBal);
+        }
+        else
+        {
+          display("Invalid deposit amount entered.");
+        }
+        flag = 1;
+      }
+     else
+      {
+        alert('Invalid Choice. Please try again.');
+        flag = 0;
+      }
+
+   }while(flag === 0);
+
+    </script>
     </body>
 </html>
