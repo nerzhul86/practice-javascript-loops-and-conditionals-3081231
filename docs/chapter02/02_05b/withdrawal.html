@@ -28,6 +28,25 @@
  *   - Print a "Thank you for banking with us" message
  */
 
+ let currBalance = parseFloat(prompt('Current Balance?'));
+
+ let amtWithdraw = parseFloat(prompt('Amount to Withdraw?'));
+
+ display("Current Balance: " + currBalance);
+ display("Withdrawal Amount: " + amtWithdraw);
+
+ if(amtWithdraw <= currBalance)
+ {
+    let updatedBal = currBalance - amtWithdraw; 
+    display("Updated Balance: " + updatedBal);
+ }
+ else
+ {
+    display("Sorry, Your current balance is insufficient for withdrawing such a large amount."); 
+ }
+
+ display("Thank you for banking with us :)");
+
         </script>
     </body>
 </html>
