@@ -20,6 +20,59 @@
  * A year is a leap year if it is divisble by 4 but not by 100,
  * or if it is divisble by 400.
  */
+ 
+ let year = parseInt('Enter Year in 4 digits (yyyy)');
+ let month = parseInt('Enter the number of the Month (mm)');
+
+ if(month<=0 || month>12)
+ {
+    alert('Invalid Month entered. Month should be between 1-12.');
+    display("Reload to try again.");
+ }
+ else
+ if(year<=1899)
+ {
+    alert('Invalid Year entered. Year should be greater than 1899.');
+    display("Reload to try again.");
+ }
+ else
+ {
+    let numberDays = 0;
+
+    switch(month)
+    {
+        case 1,3,5,7,8,10,12: numberDays = 31;
+                              break;
+
+        case 9,4,6,11:        numberDays = 30;
+                              break;  
+
+        case 2:               
+        // If leap year, then number of days is 29
+
+        let divByFour = year % 4;
+        let divByHund = year % 100;
+        let divBy400 = year % 400;
+
+        if((divByFour === 0 && divByHund >0) || (divBy400 === 0))
+        {
+            numberDays = 29;
+        }
+        else
+        {
+            numberDays = 28;
+        }
+        break;
+    }
+
+    display("Month: " + month);
+    display("Year: " + year);
+    display("Number of Days: " + numberDays);
+
+ }
+
+
+
         </script>
     </body>
 </html>
