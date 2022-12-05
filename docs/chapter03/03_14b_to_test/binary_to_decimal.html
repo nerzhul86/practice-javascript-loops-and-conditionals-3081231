@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chapter 03-14</title>
+        <meta charset="utf-8"/>
+        <script src="../../display.js"></script>
+    </head>
+    
+    <body>
+        <p>Output appears below.</p>
+        <hr />
+        <p id="output"></p>
+    
+        <script>
+/*
+ * Read an input string consisting of ones and zeros, and
+ * convert it to a decimal, using an indexed for loop.
+ */
+
+//https://www.geeksforgeeks.org/how-to-convert-from-binary-to-decimal/#:~:text=Binary%20to%20Decimal%20Formula,the%20decimal%20number%20of%20it.
+
+  let binStr = prompt("Enter the Binary String");
+  let len = binStr.length;
+  let final = 0;
+
+  for(i=len-1; i>=0; i--)
+  {
+    console.log(`Value ${binStr[i]} at Index ${i}`);
+    let pow = (len-1) - i;
+    console.log(`Power: ${pow}`);
+
+    let decNo = Math.pow(2,pow) * parseInt(binStr[i]);
+
+    final+= decNo;
+  }
+
+  display("Decimal Number: " + final);
+
+        </script>
+    </body>
+</html>
