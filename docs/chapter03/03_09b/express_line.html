@@ -26,6 +26,35 @@
  * Add 5% sales tax
  * Display the total
  */
+
+ let subTotal = 0;
+ let noItems = 0;
+ let price = 0;
+
+ do
+ {
+    price = parseInt(prompt("Enter Item Price"));
+
+    if(price>0)
+    {
+        noItems++;
+        subTotal+= price;
+    }
+    else
+    {
+        display("Price cannot be zero.");
+    }
+
+ }while((noItems<=4) && (price!=0));
+
+ display("Subtotal is " + subTotal);
+
+ let taxSales = subTotal * parseFloat(5/100); 
+
+ let total = taxSales + subTotal;
+
+ display("Total is" + total);
+
         </script>
     </body>
 </html>
