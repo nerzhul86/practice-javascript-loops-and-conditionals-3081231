@@ -22,6 +22,27 @@
  *   - add one to the number of steps
  * Print the final number of steps
  */
+
+ let number = prompt('Enter a Number');
+ let steps = 0;
+
+ while(number!=1)
+ {
+    if((number%2)===0) // Number is Even
+    {
+        number = number/2;
+    }
+    else
+    {
+        number = (number * 3) + 1;
+    }
+    steps = steps + 1;
+    display("The Number is " + number);
+    
+ }
+
+ display("Steps: " + steps);
+
         </script>
     </body>
 </html>
